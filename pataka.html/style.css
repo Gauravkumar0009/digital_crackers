@@ -1,0 +1,888 @@
+/* ==========================
+   GLOBAL SETTINGS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080817;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 7%;
+
+    background: #09091aeF;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 19px;
+    color: #ffd700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff6600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.nav-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 30px;
+
+    color: white;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #ff4d00,
+        #ffae00
+    );
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #ff7300;
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 10%;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 40%,
+            #382064,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #09091a,
+            #15102c
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 10px 20px;
+    margin-bottom: 25px;
+
+    border: 1px solid #ffd70060;
+    border-radius: 30px;
+
+    color: #ffd700;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 800;
+    line-height: 1.1;
+
+    text-shadow: 0 0 30px #ff650050;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #ffd700,
+        #ff6b00,
+        #ff00a6,
+        #00d9ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 500px;
+    color: #bcbccc;
+    line-height: 1.9;
+    margin: 25px 0 35px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    text-decoration: none;
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        #ff4d00,
+        #ffae00
+    );
+
+    border-radius: 30px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ff8c00;
+}
+
+.hero-decoration {
+    font-size: clamp(130px, 22vw, 260px);
+
+    filter: drop-shadow(0 0 35px #ff5e00);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+}
+
+
+/* ==========================
+   FIREWORKS COLLECTION
+========================== */
+
+.cracker-section {
+    padding: 100px 8%;
+    position: relative;
+    z-index: 2;
+    background: #0a0919;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading span,
+.small-heading {
+    color: #ffae00;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 4vw, 38px);
+    margin: 18px 0;
+}
+
+.section-heading p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.cracker-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* ==========================
+   CRACKER CARDS
+========================== */
+
+.cracker-card {
+    position: relative;
+
+    text-align: center;
+
+    padding: 25px 18px;
+
+    border-radius: 22px;
+    border: 1px solid #ffffff18;
+
+    background: linear-gradient(
+        145deg,
+        #201839,
+        #101020
+    );
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.cracker-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #ffae00;
+
+    box-shadow:
+        0 15px 40px #ff690025,
+        0 0 20px #ffae0020;
+}
+
+.cracker-visual {
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            #59317a50,
+            transparent 70%
+        );
+}
+
+.cracker-card h3 {
+    font-size: 19px;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.cracker-card p {
+    min-height: 45px;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.cracker-card button {
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #ffae00;
+    border-radius: 30px;
+
+    background: transparent;
+    color: #ffd700;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cracker-card button:hover {
+    background: linear-gradient(
+        90deg,
+        #ff4d00,
+        #ffae00
+    );
+
+    color: white;
+    box-shadow: 0 0 20px #ff7800;
+}
+
+
+/* ==========================
+   INDIVIDUAL CRACKER DESIGNS
+========================== */
+
+
+/* ROCKET */
+
+.rocket {
+    position: relative;
+    width: 40px;
+    height: 100px;
+    transform: rotate(-35deg);
+}
+
+.rocket-body {
+    position: absolute;
+
+    width: 28px;
+    height: 75px;
+
+    left: 6px;
+    top: 15px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff3500,
+        #ffd700,
+        #ff3500
+    );
+
+    box-shadow: 0 0 20px #ff7800;
+}
+
+.rocket-head {
+    position: absolute;
+
+    top: 0;
+    left: 6px;
+
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 22px solid #ffd700;
+}
+
+.rocket-fin {
+    position: absolute;
+    top: 70px;
+
+    width: 15px;
+    height: 22px;
+
+    background: #ff4d00;
+}
+
+.rocket-fin.left {
+    left: 0;
+    transform: skewY(-30deg);
+}
+
+.rocket-fin.right {
+    right: 0;
+    transform: skewY(30deg);
+}
+
+.rocket-fire {
+    position: absolute;
+    top: 85px;
+    left: 13px;
+
+    width: 14px;
+    height: 30px;
+
+    background: linear-gradient(
+        #ffff00,
+        #ff4d00,
+        transparent
+    );
+
+    border-radius: 50%;
+    filter: blur(3px);
+}
+
+
+/* SKY SHOT */
+
+.visual-firework {
+    font-size: 110px;
+    color: #ffd700;
+
+    text-shadow:
+        0 0 15px orange,
+        0 0 35px red,
+        0 0 60px yellow;
+
+    animation: fireworkRotate 5s linear infinite;
+}
+
+@keyframes fireworkRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* PHULJHADI */
+
+.sparkler {
+    font-size: 110px;
+    color: #ffd700;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px gold,
+        0 0 50px orange;
+
+    animation: sparklerGlow 0.8s infinite alternate;
+}
+
+@keyframes sparklerGlow {
+    from {
+        transform: scale(0.9);
+        filter: brightness(1);
+    }
+
+    to {
+        transform: scale(1.1);
+        filter: brightness(1.8);
+    }
+}
+
+
+/* ANAR */
+
+.anar-visual {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 15px 15px 30px 30px;
+
+    background: linear-gradient(
+        90deg,
+        #ff4d00,
+        #ffd700,
+        #ff4d00
+    );
+
+    box-shadow: 0 0 25px orange;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anar-flame {
+    font-size: 55px;
+    color: white;
+    animation: sparklerGlow 0.5s infinite alternate;
+}
+
+
+/* CHAKRI */
+
+.chakri-visual {
+    font-size: 110px;
+    color: #ffae00;
+
+    text-shadow: 0 0 25px #ff4d00;
+
+    animation: fireworkRotate 2s linear infinite;
+}
+
+
+/* BOMB */
+
+.bomb-visual {
+    font-size: 100px;
+    color: #ff4d00;
+
+    text-shadow: 0 0 30px red;
+
+    animation: bombPulse 1s infinite alternate;
+}
+
+@keyframes bombPulse {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+
+/* 1000 WALA */
+
+.thousand-visual {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 15px orange,
+        0 0 35px red;
+}
+
+
+/* MEGA BLAST */
+
+.mega-visual {
+    font-size: 100px;
+
+    filter: drop-shadow(0 0 25px orange);
+
+    animation: bombPulse 1s infinite alternate;
+}
+
+.mega-card {
+    border-color: #ff6b0040;
+}
+
+
+/* ==========================
+   SOUND SECTION
+========================== */
+
+.sound-section {
+    padding: 100px 8%;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            #4d1d6b,
+            transparent 40%
+        ),
+        #100c20;
+}
+
+.sound-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+    align-items: center;
+}
+
+.sound-info h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.sound-info h2 span {
+    color: #ffd700;
+}
+
+.sound-info p {
+    color: #bbb;
+    line-height: 2;
+}
+
+.sound-controls {
+    padding: 35px;
+
+    border: 1px solid #ffffff25;
+    border-radius: 25px;
+
+    background: #ffffff0b;
+    backdrop-filter: blur(15px);
+}
+
+.sound-controls h3 {
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+.control-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.control-row button {
+    flex: 1;
+
+    padding: 15px 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #6626a9,
+        #b32c85
+    );
+
+    color: white;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.control-row button:hover {
+    box-shadow: 0 0 20px #ad39d0;
+}
+
+.volume-box {
+    margin-top: 30px;
+}
+
+.volume-box label {
+    color: #ccc;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.volume-box span {
+    float: right;
+    color: #ffd700;
+}
+
+.volume-box input {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+
+    accent-color: #ffd700;
+}
+
+.status {
+    margin-top: 25px;
+    font-size: 10px;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    background: #00ff88;
+    border-radius: 50%;
+
+    margin-right: 8px;
+
+    box-shadow: 0 0 10px #00ff88;
+}
+
+
+/* ==========================
+   CELEBRATION
+========================== */
+
+.celebration {
+    position: relative;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #422052,
+            #0b0919 70%
+        );
+}
+
+.celebration-icon {
+    font-size: 80px;
+}
+
+.celebration h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    margin: 20px 0 5px;
+}
+
+.celebration h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(45px, 8vw, 85px);
+
+    color: #ffd700;
+
+    text-shadow: 0 0 30px orange;
+}
+
+.celebration p {
+    color: #bbb;
+    margin: 20px 0 30px;
+}
+
+.celebration button {
+    padding: 17px 35px;
+
+    border: none;
+    border-radius: 35px;
+
+    background: linear-gradient(
+        90deg,
+        #ff4500,
+        #ffcc00
+    );
+
+    color: white;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+
+    background: #070711;
+    border-top: 1px solid #ffffff15;
+}
+
+footer h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffd700;
+    letter-spacing: 3px;
+}
+
+footer p {
+    color: #999;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.copyright {
+    margin-top: 25px;
+    letter-spacing: 2px;
+}
+
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media(max-width: 1000px) {
+
+    .cracker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-decoration {
+        font-size: 150px;
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+        text-align: center;
+        justify-content: center;
+        padding: 60px 7%;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .sound-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 480px) {
+
+    .cracker-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cracker-section {
+        padding: 70px 6%;
+    }
+
+    .sound-controls {
+        padding: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+}

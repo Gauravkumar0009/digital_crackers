@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fireworks World | Ultimate Pataka Experience</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FIREWORKS BACKGROUND -->
+
+    <canvas id="fireworks"></canvas>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>✦</span> FIREWORKS WORLD
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#crackers">Fireworks</a>
+            <a href="#experience">Experience</a>
+        </div>
+
+        <button class="nav-btn" onclick="megaBlast()">
+            MEGA BLAST ✨
+        </button>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ THE ULTIMATE DIGITAL FIREWORKS SHOW
+            </div>
+
+            <h1>
+                LIGHT UP <br>
+                <span>THE SKY</span>
+                                </h1>
+
+            <p>
+                Experience the magic of colourful fireworks,
+                spectacular explosions and immersive digital
+                sound effects.
+            </p>
+
+            <a href="#crackers" class="hero-btn">
+                EXPLORE FIREWORKS ↓
+            </a>
+
+        </div>
+
+        <div class="hero-decoration">
+            🎆
+        </div>
+
+    </section>
+
+
+    <!-- FIREWORKS SECTION -->
+
+    <section class="cracker-section" id="crackers">
+
+        <div class="section-heading">
+
+            <span>CHOOSE YOUR EXPERIENCE</span>
+
+            <h2>
+                THE FIREWORKS COLLECTION
+            </h2>
+
+            <p>
+                Select any digital cracker and enjoy its
+                unique animated fireworks show.
+            </p>
+
+        </div>
+
+
+        <div class="cracker-grid">
+
+
+            <!-- ROCKET -->
+
+            <div class="cracker-card" onclick="launchRocket()">
+
+                <div class="cracker-visual rocket-visual">
+                    <div class="rocket">
+                        <div class="rocket-head"></div>
+                        <div class="rocket-body"></div>
+                        <div class="rocket-fin left"></div>
+                        <div class="rocket-fin right"></div>
+                        <div class="rocket-fire"></div>
+                    </div>
+                </div>
+
+                <h3>Sky Rocket</h3>
+
+                <p>Colourful rocket launch experience.</p>
+
+                <button>LAUNCH NOW ↗</button>
+
+            </div>
+
+
+            <!-- SKY SHOT -->
+
+            <div class="cracker-card" onclick="skyShot()">
+
+                <div class="cracker-visual">
+                    <div class="visual-firework">✺</div>
+                </div>
+
+                <h3>Sky Shot</h3>
+
+                <p>Beautiful aerial fireworks explosion.</p>
+
+                <button>BLAST NOW ↗</button>
+
+            </div>
+
+
+            <!-- PHULJHADI -->
+
+            <div class="cracker-card" onclick="phuljhadi()">
+
+                <div class="cracker-visual">
+                    <div class="sparkler">✧</div>
+                </div>
+
+                <h3>Phuljhadi</h3>
+
+                <p>Golden sparkling particle experience.</p>
+
+                <button>LIGHT UP ↗</button>
+
+            </div>
+
+
+            <!-- ANAR -->
+
+            <div class="cracker-card" onclick="anar()">
+
+                <div class="cracker-visual">
+                    <div class="anar-visual">
+                        <div class="anar-flame">♨</div>
+                    </div>
+                </div>
+
+                <h3>Golden Anar</h3>
+
+                <p>Bright fountain-style fireworks effect.</p>
+
+                <button>START SHOW ↗</button>
+
+            </div>
+
+
+            <!-- CHAKRI -->
+
+            <div class="cracker-card" onclick="chakri()">
+
+                <div class="cracker-visual">
+                    <div class="chakri-visual">✺</div>
+                </div>
+
+                <h3>Chakri</h3>
+
+                <p>Spinning colourful spark animations.</p>
+
+                <button>SPIN NOW ↗</button>
+
+            </div>
+
+
+            <!-- SUTLI BOMB -->
+
+            <div class="cracker-card" onclick="sutliBomb()">
+
+                <div class="cracker-visual">
+                    <div class="bomb-visual">✹</div>
+                </div>
+
+                <h3>Sutli Bomb</h3>
+
+                <p>Simulated cinematic digital blast.</p>
+
+                <button>EXPERIENCE ↗</button>
+
+            </div>
+
+
+            <!-- 1000 WALA -->
+
+            <div class="cracker-card" onclick="thousandWala()">
+
+                <div class="cracker-visual">
+                    <div class="thousand-visual">1000</div>
+                </div>
+
+                <h3>1000 Wala</h3>
+
+                <p>Sequential colourful spark celebration.</p>
+
+                <button>START SHOW ↗</button>
+
+            </div>
+
+
+            <!-- MEGA BLAST -->
+
+            <div class="cracker-card mega-card" onclick="megaBlast()">
+
+                <div class="cracker-visual">
+                    <div class="mega-visual">💥</div>
+                </div>
+
+                <h3>Ultimate Mega Blast</h3>
+
+                <p>Multiple digital fireworks together.</p>
+
+                <button>MEGA BLAST ↗</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOUND EXPERIENCE -->
+
+    <section class="sound-section" id="experience">
+
+        <div class="sound-container">
+
+            <div class="sound-info">
+
+                <span class="small-heading">
+                    IMMERSIVE EXPERIENCE
+                </span>
+
+                <h2>
+                    FEEL THE <span>BOOM!</span>
+                </h2>
+
+                <p>
+                    Experience layered digital sound effects,
+                    beautiful celebration music and
+                    spectacular visual effects.
+                </p>
+
+            </div>
+
+
+            <div class="sound-controls">
+
+                <h3>🎵 AUDIO CONTROL CENTER</h3>
+
+                <div class="control-row">
+
+                    <button id="musicButton" onclick="toggleMusic()">
+                        ▶ PLAY MUSIC
+                    </button>
+
+                    <button id="soundButton" onclick="toggleSound()">
+                        🔊 SOUND ON
+                    </button>
+
+                </div>
+
+                <div class="volume-box">
+
+                    <label for="volumeControl">
+                        MASTER VOLUME
+                    </label>
+
+                    <span id="volumeValue">60%</span>
+
+                    <input
+                        type="range"
+                        id="volumeControl"
+                        min="0"
+                        max="1000"
+                        value="60"
+                        oninput="changeVolume(this.value)"
+                    >
+
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    DIGITAL AUDIO SYSTEM READY
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CELEBRATION SECTION -->
+
+    <section class="celebration">
+
+        <div class="celebration-content">
+
+            <div class="celebration-icon">🎇</div>
+
+            <h2>MAKE EVERY MOMENT</h2>
+
+            <h1>MAGICAL!</h1>
+
+            <p>
+                Let the sky shine with colours and celebrations.
+            </p>
+
+            <button onclick="megaBlast()">
+                START CELEBRATION ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>✦ FIREWORKS WORLD</h3>
+
+        <p>
+            A digital fireworks experience created
+            with HTML, CSS and JavaScript.
+        </p>
+
+        <p class="copyright">
+            © 2026 FIREWORKS WORLD. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
